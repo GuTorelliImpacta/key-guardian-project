@@ -16,7 +16,7 @@ export const company = {
   whatsappMessage: "Olá! Vim pelo site e gostaria de um orçamento de segurança.",
 } as const;
 
-export function whatsappUrl(message = company.whatsappMessage) {
+export function whatsappUrl(message: string = company.whatsappMessage) {
   return `${company.whatsappHref}?text=${encodeURIComponent(message)}`;
 }
 
