@@ -309,3 +309,17 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Variáveis de ambiente
+
+Copie `.env.example` para `.env` e preencha:
+
+- `RESEND_API_KEY`, `LEAD_FROM_EMAIL`, `LEAD_TO_EMAIL` — usados pela função server-side do formulário de orçamento (`src/lib/submitLead.ts`) para enviar o lead por e-mail via [Resend](https://resend.com). `LEAD_TO_EMAIL` está pendente de confirmação da cliente.
+- `VITE_SITE_URL` — URL absoluta do site, usada em canonical/og/twitter e nos arquivos gerados por `scripts/generate-seo-files.mjs` (`robots.txt`, `sitemap.xml`).
+- `VITE_ALLOW_INDEXING` — `"true"` permite indexação; enquanto o site estiver em `*.netlify.app`, mantenha `"false"`.
+
+Essas variáveis devem ser configuradas nas variáveis de ambiente de build da Netlify (Site settings → Environment variables). `scripts/generate-seo-files.mjs` roda no `prebuild` e também aceita `SITE_URL`/`ALLOW_INDEXING` sem o prefixo `VITE_`, mas o bundle do cliente só enxerga as variáveis com prefixo `VITE_` (convenção do Vite).
+
+## Política de Privacidade — pendências
+
+O texto em `/politica-de-privacidade` é uma minuta (ver `TODO` no topo de `src/routes/politica-de-privacidade.tsx`) e precisa de revisão da assessoria jurídica da cliente, incluindo a definição do canal oficial do encarregado (DPO) pela LGPD.
