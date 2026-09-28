@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-labelledby="t6 d6">
+  <title id="t6">Sistemas duplicados da central Key Master</title>
+  <desc id="d6">Ilustração de dois racks de servidores espelhados, representando a redundância da central própria, em tons de índigo e laranja.</desc>
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2A1470"/>
+      <stop offset="1" stop-color="#120A3A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg6)"/>
+  <g transform="translate(280,220)">
+    <rect width="260" height="460" rx="16" fill="#1B0E52" stroke="#A8A8C0" stroke-opacity="0.4" stroke-width="4"/>
+    <g fill="#3A1E8C" stroke="#A8A8C0" stroke-opacity="0.4" stroke-width="2">
+      <rect x="24" y="30" width="212" height="60"/>
+      <rect x="24" y="110" width="212" height="60"/>
+      <rect x="24" y="190" width="212" height="60"/>
+      <rect x="24" y="270" width="212" height="60"/>
+    </g>
+    <circle cx="46" cy="60" r="6" fill="#22C55E"/>
+    <circle cx="46" cy="140" r="6" fill="#E3700F"/>
+    <circle cx="46" cy="220" r="6" fill="#22C55E"/>
+    <circle cx="46" cy="300" r="6" fill="#22C55E"/>
+  </g>
+  <g transform="translate(660,220)">
+    <rect width="260" height="460" rx="16" fill="#1B0E52" stroke="#E3700F" stroke-width="4"/>
+    <g fill="#3A1E8C" stroke="#A8A8C0" stroke-opacity="0.4" stroke-width="2">
+      <rect x="24" y="30" width="212" height="60"/>
+      <rect x="24" y="110" width="212" height="60"/>
+      <rect x="24" y="190" width="212" height="60"/>
+      <rect x="24" y="270" width="212" height="60"/>
+    </g>
+    <circle cx="46" cy="60" r="6" fill="#22C55E"/>
+    <circle cx="46" cy="140" r="6" fill="#22C55E"/>
+    <circle cx="46" cy="220" r="6" fill="#22C55E"/>
+    <circle cx="46" cy="300" r="6" fill="#22C55E"/>
+  </g>
+  <path d="M540 450 L660 450" stroke="#E3700F" stroke-width="6" stroke-dasharray="4 10" stroke-linecap="round"/>
+  <g transform="translate(160,150)" fill="none" stroke="#A8A8C0" stroke-opacity="0.5" stroke-width="4">
+    <path d="M0 60 L60 0 M0 0 L60 60"/>
+  </g>
+</svg>
