@@ -17,22 +17,41 @@ import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/config/company";
 
 function NotFoundComponent() {
+  useEffect(() => {
+    document.title = "Página não encontrada | Key Master";
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex, nofollow";
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-primary-dark px-4 text-hero-foreground">
+    <div
+      id="conteudo"
+      className="flex min-h-dvh items-center justify-center bg-primary-dark px-4 text-hero-foreground"
+    >
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-accent">404</h1>
         <h2 className="mt-4 text-xl font-semibold">Página não encontrada</h2>
         <p className="mt-2 text-sm text-silver">
-          Este endereço não existe ou foi alterado.
+          Este endereço não existe ou foi alterado. Que tal voltar para o início ou falar com a
+          gente?
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Voltar ao início
           </Link>
-          <Button asChild variant="whatsapp" className="ml-2"><a href={whatsappUrl()}>WhatsApp</a></Button>
+          <Button asChild variant="whatsapp">
+            <a href={whatsappUrl()} target="_blank" rel="noreferrer">
+              Falar no WhatsApp
+            </a>
+          </Button>
         </div>
       </div>
     </div>
@@ -93,7 +112,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap",
+      },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
@@ -105,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
@@ -122,7 +144,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteChrome><Outlet /><Footer /></SiteChrome>
+      <SiteChrome>
+        <Outlet />
+        <Footer />
+      </SiteChrome>
     </QueryClientProvider>
   );
 }
