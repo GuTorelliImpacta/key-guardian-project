@@ -1,0 +1,75 @@
+# Este arquivo NÃO define [build] (comando/publish dir) para não sobrescrever
+# a configuração já usada pelo site na Netlify. Contém apenas redirects 301
+# das rotas antigas (consolidadas em P1-A) e headers de segurança/cache (P2).
+
+[[redirects]]
+  from = "/solucoes/residencial"
+  to = "/servicos#para-casa"
+  status = 301
+
+[[redirects]]
+  from = "/solucoes/empresarial"
+  to = "/servicos#para-empresa"
+  status = 301
+
+[[redirects]]
+  from = "/solucoes/condominios"
+  to = "/servicos#para-condominios"
+  status = 301
+
+[[redirects]]
+  from = "/solucoes/industrias-e-logistica"
+  to = "/servicos#para-industrias"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/monitoramento-de-alarmes"
+  to = "/servicos#monitoramento-de-alarmes"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/monitoramento-de-imagens"
+  to = "/servicos#monitoramento-de-imagens"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/cftv"
+  to = "/servicos#cftv"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/alarmes-e-sensores"
+  to = "/servicos#alarmes-e-sensores"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/storage-de-imagens"
+  to = "/servicos#storage-de-imagens"
+  status = 301
+
+[[redirects]]
+  from = "/servicos/manutencao-e-projetos"
+  to = "/servicos#manutencao-e-projetos"
+  status = 301
+
+[[redirects]]
+  from = "/como-funciona"
+  to = "/#como-funciona"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
