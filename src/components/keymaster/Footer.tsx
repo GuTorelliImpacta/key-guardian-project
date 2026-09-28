@@ -15,13 +15,15 @@ export function Footer() {
     <footer className="bg-primary-dark pb-24 pt-16 text-hero-foreground md:pb-8">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
         <div>
-          <img
-            src="/images/key-master-logo.svg"
-            alt="Key Master"
-            width={230}
-            height={66}
-            className="h-20 w-auto brightness-0 invert"
-          />
+          <div className="inline-block rounded-lg bg-background/95 p-2">
+            <img
+              src="/images/key-master-logo.png"
+              alt="Key Master Monitoramento 24 Horas"
+              width={900}
+              height={469}
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="mt-4 text-sm text-silver">
             Monitoramento 24 horas desde {company.foundedYear}.
           </p>

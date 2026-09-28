@@ -41,7 +41,7 @@ function buildSchema() {
         legalName: company.legalEntities[0].name,
         alternateName: "KM Monitoramento 24hrs",
         image: absoluteUrl("/og-image.png"),
-        logo: absoluteUrl("/images/key-master-logo.svg"),
+        logo: absoluteUrl("/images/key-master-logo.png"),
         foundingDate: company.foundedDate,
         telephone: company.phones.central.tel,
         email: company.email,
@@ -140,10 +140,10 @@ function Home() {
       <section className="dot-grid relative min-h-[760px] overflow-hidden bg-primary-dark pb-20 pt-40 text-hero-foreground md:pt-52">
         <div className="absolute inset-0 opacity-15">
           <img
-            src="/images/camera-seguranca.svg"
+            src="/images/camera-seguranca-real.webp"
             alt="Câmera de segurança Key Master protegendo um perímetro"
-            width={1600}
-            height={1000}
+            width={565}
+            height={380}
             fetchPriority="high"
             decoding="async"
             className="h-full w-full object-cover"
@@ -370,6 +370,62 @@ function Home() {
             >
               Conheça a Key Master
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-soft py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-6">
+          <SectionTitle
+            eyebrow="Diferenciais"
+            title="Presença real em cada etapa da sua proteção"
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                img: "/images/equipe-especializada.webp",
+                w: 376,
+                h: 374,
+                title: "Equipe especializada",
+                copy: "Profissionais preparados para agir com rapidez e eficiência.",
+                alt: "Agente da Key Master em campo, ao lado de uma viatura de apoio",
+              },
+              {
+                img: "/images/protecao-residencial-real.webp",
+                w: 385,
+                h: 380,
+                title: "Mais segurança para o que importa",
+                copy: "Protegendo residências, condomínios e empresas.",
+                alt: "Imóvel residencial com portão monitorado pela Key Master",
+              },
+              {
+                img: "/images/acesso-celular-real.webp",
+                w: 390,
+                h: 384,
+                title: "Acesso remoto ao projeto",
+                copy: "Quando incluído no projeto, acompanhe imagens de onde estiver.",
+                alt: "Aplicativo de monitoramento de câmeras aberto em um celular",
+              },
+            ].map((c) => (
+              <article
+                key={c.title}
+                className="overflow-hidden rounded-2xl border border-border bg-background shadow-soft transition hover:-translate-y-1 hover:border-accent"
+              >
+                <img
+                  src={c.img}
+                  alt={c.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={c.w}
+                  height={c.h}
+                  className="aspect-square w-full object-cover"
+                />
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-primary">{c.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{c.copy}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

@@ -91,10 +91,10 @@ export function SiteChrome({ children }: { children: ReactNode }) {
               className="rounded-lg bg-background/95 px-2 py-1"
             >
               <img
-                src="/images/key-master-logo.svg"
+                src="/images/key-master-logo.png"
                 alt="Key Master Monitoramento 24 Horas"
-                width={230}
-                height={66}
+                width={900}
+                height={469}
                 className="h-12 w-auto max-w-44 object-contain"
               />
             </Link>
@@ -153,10 +153,10 @@ export function SiteChrome({ children }: { children: ReactNode }) {
           >
             <div className="flex items-center justify-between">
               <img
-                src="/images/key-master-logo.svg"
+                src="/images/key-master-logo.png"
                 alt=""
-                width={230}
-                height={66}
+                width={900}
+                height={469}
                 className="h-12 w-auto"
               />
               <Button
